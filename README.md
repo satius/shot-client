@@ -1,4 +1,4 @@
-# hola
+# shot-client
 
 A new Flutter application.
 

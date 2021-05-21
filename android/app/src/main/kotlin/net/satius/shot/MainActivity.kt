@@ -1,4 +1,4 @@
-package net.satius.hola
+package net.satius.shot
 
 import io.flutter.embedding.android.FlutterActivity
 

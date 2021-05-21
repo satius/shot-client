@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.satius.hola">
+    package="net.satius.shot">
    <application
-        android:label="hola"
+        android:label="Shot"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

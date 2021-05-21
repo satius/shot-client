@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hola/pages/home/home_page_checkbox_scaffold.dart';
-import 'package:hola/pages/home/home_page_counter_column.dart';
+import 'package:shot_client/pages/home/home_page_checkbox_scaffold.dart';
+import 'package:shot_client/pages/home/home_page_counter_column.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key key, this.title}) : super(key: key);

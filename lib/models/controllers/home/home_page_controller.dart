@@ -1,4 +1,4 @@
-import 'package:hola/models/controllers/home/home_page_state.dart';
+import 'package:shot_client/models/controllers/home/home_page_state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomePageController extends StateNotifier<HomePageState> {
