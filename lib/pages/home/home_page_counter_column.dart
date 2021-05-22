@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class HomePageCounterColumn extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final counter = useProvider(homePageProvider.state).counter;
+    final counter = useProvider(homePageProvider).counter;
 
     return Scaffold(
       body: Center(
@@ -24,7 +24,7 @@ class HomePageCounterColumn extends HookWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read(homePageProvider).increment(),
+        onPressed: () => context.read(homePageProvider.notifier).increment(),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
