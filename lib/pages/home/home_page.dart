@@ -3,7 +3,10 @@ import 'package:shot_client/pages/home/home_page_checkbox_scaffold.dart';
 import 'package:shot_client/pages/home/home_page_counter_column.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
   final String title;
 
   @override

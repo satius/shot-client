@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'home_page_state.dart';
 
@@ -9,12 +9,14 @@ part of 'home_page_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$HomePageStateTearOff {
   const _$HomePageStateTearOff();
 
-// ignore: unused_element
-  _HomePageState call({@required int counter, @required bool isChecked}) {
+  _HomePageState call({required int counter, required bool isChecked}) {
     return _HomePageState(
       counter: counter,
       isChecked: isChecked,
@@ -23,16 +25,16 @@ class _$HomePageStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $HomePageState = _$HomePageStateTearOff();
 
 /// @nodoc
 mixin _$HomePageState {
-  int get counter;
-  bool get isChecked;
+  int get counter => throw _privateConstructorUsedError;
+  bool get isChecked => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomePageStateCopyWith<HomePageState> get copyWith;
+  $HomePageStateCopyWith<HomePageState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -54,12 +56,18 @@ class _$HomePageStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object counter = freezed,
-    Object isChecked = freezed,
+    Object? counter = freezed,
+    Object? isChecked = freezed,
   }) {
     return _then(_value.copyWith(
-      counter: counter == freezed ? _value.counter : counter as int,
-      isChecked: isChecked == freezed ? _value.isChecked : isChecked as bool,
+      counter: counter == freezed
+          ? _value.counter
+          : counter // ignore: cast_nullable_to_non_nullable
+              as int,
+      isChecked: isChecked == freezed
+          ? _value.isChecked
+          : isChecked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -87,22 +95,27 @@ class __$HomePageStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object counter = freezed,
-    Object isChecked = freezed,
+    Object? counter = freezed,
+    Object? isChecked = freezed,
   }) {
     return _then(_HomePageState(
-      counter: counter == freezed ? _value.counter : counter as int,
-      isChecked: isChecked == freezed ? _value.isChecked : isChecked as bool,
+      counter: counter == freezed
+          ? _value.counter
+          : counter // ignore: cast_nullable_to_non_nullable
+              as int,
+      isChecked: isChecked == freezed
+          ? _value.isChecked
+          : isChecked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_HomePageState extends _HomePageState {
-  _$_HomePageState({@required this.counter, @required this.isChecked})
-      : assert(counter != null),
-        assert(isChecked != null),
-        super._();
+  _$_HomePageState({required this.counter, required this.isChecked})
+      : super._();
 
   @override
   final int counter;
@@ -139,15 +152,16 @@ class _$_HomePageState extends _HomePageState {
 }
 
 abstract class _HomePageState extends HomePageState {
-  _HomePageState._() : super._();
-  factory _HomePageState({@required int counter, @required bool isChecked}) =
+  factory _HomePageState({required int counter, required bool isChecked}) =
       _$_HomePageState;
+  _HomePageState._() : super._();
 
   @override
-  int get counter;
+  int get counter => throw _privateConstructorUsedError;
   @override
-  bool get isChecked;
+  bool get isChecked => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$HomePageStateCopyWith<_HomePageState> get copyWith;
+  _$HomePageStateCopyWith<_HomePageState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
