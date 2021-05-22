@@ -27,6 +27,7 @@ dependencies:
   hooks_riverpod:
   freezed_annotation:
   kotlin_flavor:
+  firebase_auth: ^1.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
