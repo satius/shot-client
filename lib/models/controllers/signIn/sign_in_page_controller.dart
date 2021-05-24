@@ -2,14 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shot_client/models/common/app_error.dart';
 import 'package:shot_client/models/common/result.dart';
+import 'package:shot_client/models/controllers/signIn/sign_in_page_state.dart';
 import 'package:shot_client/models/repositories/auth_repository.dart';
 import 'package:shot_client/models/repositories/user_repository.dart';
 
-import 'top_page_state.dart';
-
-class TopPageController extends StateNotifier<TopPageState> {
-  TopPageController(this._authRepository, this._userRepository)
-      : super(TopPageState(
+class SignInPageController extends StateNotifier<SignInPageState> {
+  SignInPageController(this._authRepository, this._userRepository)
+      : super(SignInPageState(
           isLoading: false,
           formState: GlobalKey<FormState>(),
         ));
@@ -35,10 +34,7 @@ class TopPageController extends StateNotifier<TopPageState> {
 
   Future<Result<String>> signIn() async {
     // TODO: use isBlank by quiver
-    if (state.email == null ||
-        state.password == null ||
-        state.email!.isEmpty ||
-        state.password!.isEmpty) {
+    if (state.email == null || state.password == null || state.email!.isEmpty || state.password!.isEmpty) {
       return Result.failure(error: AppError(type: AppErrorType.front));
     } else {
       // TODO: デバッグモード判定 Utilへ移動
@@ -58,10 +54,8 @@ class TopPageController extends StateNotifier<TopPageState> {
   Future<Result<String?>> fetchOnpPersonUserId({
     required String authUid,
   }) async {
-    var result =
-        Result<String?>.failure(error: AppError(type: AppErrorType.unknown));
-    final userInfoResult =
-        await _userRepository.fetchOnePersonUserInfo(authUid: authUid);
+    var result = Result<String?>.failure(error: AppError(type: AppErrorType.unknown));
+    final userInfoResult = await _userRepository.fetchOnePersonUserInfo(authUid: authUid);
 
     userInfoResult.when(
       success: (shotUser) {

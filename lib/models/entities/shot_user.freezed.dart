@@ -41,19 +41,13 @@ mixin _$ShotUser {
   Timestamp get createdAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ShotUserCopyWith<ShotUser> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ShotUserCopyWith<ShotUser> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ShotUserCopyWith<$Res> {
-  factory $ShotUserCopyWith(ShotUser value, $Res Function(ShotUser) then) =
-      _$ShotUserCopyWithImpl<$Res>;
-  $Res call(
-      {ShotUserType type,
-      String shotId,
-      bool isMailAddressPublic,
-      Timestamp createdAt});
+  factory $ShotUserCopyWith(ShotUser value, $Res Function(ShotUser) then) = _$ShotUserCopyWithImpl<$Res>;
+  $Res call({ShotUserType type, String shotId, bool isMailAddressPublic, Timestamp createdAt});
 
   $ShotUserTypeCopyWith<$Res> get type;
 }
@@ -103,22 +97,16 @@ class _$ShotUserCopyWithImpl<$Res> implements $ShotUserCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ShotUserCopyWith<$Res> implements $ShotUserCopyWith<$Res> {
-  factory _$ShotUserCopyWith(_ShotUser value, $Res Function(_ShotUser) then) =
-      __$ShotUserCopyWithImpl<$Res>;
+  factory _$ShotUserCopyWith(_ShotUser value, $Res Function(_ShotUser) then) = __$ShotUserCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {ShotUserType type,
-      String shotId,
-      bool isMailAddressPublic,
-      Timestamp createdAt});
+  $Res call({ShotUserType type, String shotId, bool isMailAddressPublic, Timestamp createdAt});
 
   @override
   $ShotUserTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
-class __$ShotUserCopyWithImpl<$Res> extends _$ShotUserCopyWithImpl<$Res>
-    implements _$ShotUserCopyWith<$Res> {
+class __$ShotUserCopyWithImpl<$Res> extends _$ShotUserCopyWithImpl<$Res> implements _$ShotUserCopyWith<$Res> {
   __$ShotUserCopyWithImpl(_ShotUser _value, $Res Function(_ShotUser) _then)
       : super(_value, (v) => _then(v as _ShotUser));
 
@@ -156,11 +144,7 @@ class __$ShotUserCopyWithImpl<$Res> extends _$ShotUserCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ShotUser extends _ShotUser {
-  _$_ShotUser(
-      {required this.type,
-      required this.shotId,
-      required this.isMailAddressPublic,
-      required this.createdAt})
+  _$_ShotUser({required this.type, required this.shotId, required this.isMailAddressPublic, required this.createdAt})
       : super._();
 
   @override
@@ -181,16 +165,12 @@ class _$_ShotUser extends _ShotUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ShotUser &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.shotId, shotId) ||
-                const DeepCollectionEquality().equals(other.shotId, shotId)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.shotId, shotId) || const DeepCollectionEquality().equals(other.shotId, shotId)) &&
             (identical(other.isMailAddressPublic, isMailAddressPublic) ||
-                const DeepCollectionEquality()
-                    .equals(other.isMailAddressPublic, isMailAddressPublic)) &&
+                const DeepCollectionEquality().equals(other.isMailAddressPublic, isMailAddressPublic)) &&
             (identical(other.createdAt, createdAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)));
+                const DeepCollectionEquality().equals(other.createdAt, createdAt)));
   }
 
   @override
@@ -203,8 +183,7 @@ class _$_ShotUser extends _ShotUser {
 
   @JsonKey(ignore: true)
   @override
-  _$ShotUserCopyWith<_ShotUser> get copyWith =>
-      __$ShotUserCopyWithImpl<_ShotUser>(this, _$identity);
+  _$ShotUserCopyWith<_ShotUser> get copyWith => __$ShotUserCopyWithImpl<_ShotUser>(this, _$identity);
 }
 
 abstract class _ShotUser extends ShotUser {
@@ -225,6 +204,5 @@ abstract class _ShotUser extends ShotUser {
   Timestamp get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ShotUserCopyWith<_ShotUser> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ShotUserCopyWith<_ShotUser> get copyWith => throw _privateConstructorUsedError;
 }

@@ -33,8 +33,7 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       return Result.failure(error: AppError(type: errorType, message: "$e"));
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 
@@ -60,8 +59,7 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       return Result.failure(error: AppError(type: errorType, message: "$e"));
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 
@@ -71,8 +69,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _auth.signOut();
       return Result.success(data: null);
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 }

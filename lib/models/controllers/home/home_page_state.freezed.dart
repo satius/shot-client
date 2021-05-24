@@ -33,21 +33,18 @@ mixin _$HomePageState {
   bool get isChecked => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomePageStateCopyWith<HomePageState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HomePageStateCopyWith<HomePageState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomePageStateCopyWith<$Res> {
-  factory $HomePageStateCopyWith(
-          HomePageState value, $Res Function(HomePageState) then) =
+  factory $HomePageStateCopyWith(HomePageState value, $Res Function(HomePageState) then) =
       _$HomePageStateCopyWithImpl<$Res>;
   $Res call({int counter, bool isChecked});
 }
 
 /// @nodoc
-class _$HomePageStateCopyWithImpl<$Res>
-    implements $HomePageStateCopyWith<$Res> {
+class _$HomePageStateCopyWithImpl<$Res> implements $HomePageStateCopyWith<$Res> {
   _$HomePageStateCopyWithImpl(this._value, this._then);
 
   final HomePageState _value;
@@ -73,21 +70,17 @@ class _$HomePageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$HomePageStateCopyWith<$Res>
-    implements $HomePageStateCopyWith<$Res> {
-  factory _$HomePageStateCopyWith(
-          _HomePageState value, $Res Function(_HomePageState) then) =
+abstract class _$HomePageStateCopyWith<$Res> implements $HomePageStateCopyWith<$Res> {
+  factory _$HomePageStateCopyWith(_HomePageState value, $Res Function(_HomePageState) then) =
       __$HomePageStateCopyWithImpl<$Res>;
   @override
   $Res call({int counter, bool isChecked});
 }
 
 /// @nodoc
-class __$HomePageStateCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res>
+class __$HomePageStateCopyWithImpl<$Res> extends _$HomePageStateCopyWithImpl<$Res>
     implements _$HomePageStateCopyWith<$Res> {
-  __$HomePageStateCopyWithImpl(
-      _HomePageState _value, $Res Function(_HomePageState) _then)
+  __$HomePageStateCopyWithImpl(_HomePageState _value, $Res Function(_HomePageState) _then)
       : super(_value, (v) => _then(v as _HomePageState));
 
   @override
@@ -114,8 +107,7 @@ class __$HomePageStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomePageState extends _HomePageState {
-  _$_HomePageState({required this.counter, required this.isChecked})
-      : super._();
+  _$_HomePageState({required this.counter, required this.isChecked}) : super._();
 
   @override
   final int counter;
@@ -131,12 +123,9 @@ class _$_HomePageState extends _HomePageState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HomePageState &&
-            (identical(other.counter, counter) ||
-                const DeepCollectionEquality()
-                    .equals(other.counter, counter)) &&
+            (identical(other.counter, counter) || const DeepCollectionEquality().equals(other.counter, counter)) &&
             (identical(other.isChecked, isChecked) ||
-                const DeepCollectionEquality()
-                    .equals(other.isChecked, isChecked)));
+                const DeepCollectionEquality().equals(other.isChecked, isChecked)));
   }
 
   @override
@@ -152,8 +141,7 @@ class _$_HomePageState extends _HomePageState {
 }
 
 abstract class _HomePageState extends HomePageState {
-  factory _HomePageState({required int counter, required bool isChecked}) =
-      _$_HomePageState;
+  factory _HomePageState({required int counter, required bool isChecked}) = _$_HomePageState;
   _HomePageState._() : super._();
 
   @override
@@ -162,6 +150,5 @@ abstract class _HomePageState extends HomePageState {
   bool get isChecked => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$HomePageStateCopyWith<_HomePageState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$HomePageStateCopyWith<_HomePageState> get copyWith => throw _privateConstructorUsedError;
 }

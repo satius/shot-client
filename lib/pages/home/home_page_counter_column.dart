@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:shot_client/providers/home/home_page_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shot_client/providers/pages/home_page_provider.dart';
 
 class HomePageCounterColumn extends HookWidget {
   @override
