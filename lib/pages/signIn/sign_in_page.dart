@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shot_client/providers/pages/sign_in_page_provider.dart';
+import 'package:shot_client/route.dart';
 import 'package:shot_client/widgets/shot_page_container_decoration.dart';
 import 'package:shot_client/widgets/space_box.dart';
 
@@ -124,7 +125,7 @@ class SignInPage extends HookWidget {
                           onPressed: isLoading
                               ? null
                               : () {
-                                  Navigator.restorablePopAndPushNamed(context, "/signup");
+                                  Navigator.restorablePopAndPushNamed(context, RouteGenerator.signUpPage);
                                 },
                           child: Text("Create an account"),
                         ),
