@@ -1,5 +1,3 @@
-
-
 // enum AppErrorType {
 //   network,
 //   badRequest,
@@ -10,17 +8,7 @@
 //   unknown,F
 // }
 
-enum AppErrorType {
-  network,
-  badRequest,
-  unauthorized,
-  cancel,
-  timeout,
-  server,
-  notFound,
-  front,
-  unknown,F
-}
+enum AppErrorType { network, badRequest, unauthorized, cancel, timeout, server, notFound, front, unknown, F }
 
 class AppError {
   final AppErrorType type;
@@ -31,8 +19,6 @@ class AppError {
     this.message,
   });
 }
-
-
 
 // class AppError {
 //   late String message;

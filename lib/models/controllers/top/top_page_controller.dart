@@ -35,10 +35,7 @@ class TopPageController extends StateNotifier<TopPageState> {
 
   Future<Result<String>> signIn() async {
     // TODO: use isBlank by quiver
-    if (state.email == null ||
-        state.password == null ||
-        state.email!.isEmpty ||
-        state.password!.isEmpty) {
+    if (state.email == null || state.password == null || state.email!.isEmpty || state.password!.isEmpty) {
       return Result.failure(error: AppError(type: AppErrorType.front));
     } else {
       // TODO: デバッグモード判定 Utilへ移動
@@ -58,10 +55,8 @@ class TopPageController extends StateNotifier<TopPageState> {
   Future<Result<String?>> fetchOnpPersonUserId({
     required String authUid,
   }) async {
-    var result =
-        Result<String?>.failure(error: AppError(type: AppErrorType.unknown));
-    final userInfoResult =
-        await _userRepository.fetchOnePersonUserInfo(authUid: authUid);
+    var result = Result<String?>.failure(error: AppError(type: AppErrorType.unknown));
+    final userInfoResult = await _userRepository.fetchOnePersonUserInfo(authUid: authUid);
 
     userInfoResult.when(
       success: (shotUser) {

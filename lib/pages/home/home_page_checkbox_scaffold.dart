@@ -21,7 +21,7 @@ class HomePageCheckBoxColumn extends HookWidget {
           activeColor: Colors.blue,
           value: isChecked,
           onChanged: (isCheckedNow) {
-            isCheckedNow?.let((it){
+            isCheckedNow?.let((it) {
               context.read(homePageProvider.notifier).switchCheck(it);
             });
           },

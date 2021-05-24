@@ -17,32 +17,25 @@ class TopPage extends HookWidget {
     final startSignIn = () async {
       form.currentState!.save();
       context.read(topPageProvider.notifier).loadingStart();
-      final signInResult =
-          await context.read(topPageProvider.notifier).signIn();
+      final signInResult = await context.read(topPageProvider.notifier).signIn();
       await signInResult.when(
         success: (authUid) async {
-          final userShotIdResult = await context
-              .read(topPageProvider.notifier)
-              .fetchOnpPersonUserId(authUid: authUid);
+          final userShotIdResult = await context.read(topPageProvider.notifier).fetchOnpPersonUserId(authUid: authUid);
           userShotIdResult.when(success: (String? shotId) {
             shotId?.let((it) {
                   // TODO
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text(it)));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(it)));
                 }) ??
                 run(() {
                   // TODO
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text("not found")));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("not found")));
                 });
           }, failure: (e2) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text("${e2.message}")));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e2.message}")));
           });
         },
         failure: (e) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text("${e.message}")));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e.message}")));
         },
       );
       context.read(topPageProvider.notifier).loadingEnd();
@@ -89,13 +82,10 @@ class TopPage extends HookWidget {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(labelText: 'Email'),
                           onSaved: (emailValue) {
-                            context
-                                .read(topPageProvider.notifier)
-                                .saveEmail(emailValue);
+                            context.read(topPageProvider.notifier).saveEmail(emailValue);
                           },
                           onFieldSubmitted: (_) {
-                            FocusScope.of(context)
-                                .requestFocus(passwordFocusNode);
+                            FocusScope.of(context).requestFocus(passwordFocusNode);
                           },
                         ),
                         const SpaceBox.height(8),
@@ -106,13 +96,9 @@ class TopPage extends HookWidget {
                           decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
                           onSaved: (passwordValue) {
-                            context
-                                .read(topPageProvider.notifier)
-                                .savePassword(passwordValue);
+                            context.read(topPageProvider.notifier).savePassword(passwordValue);
                           },
-                          onFieldSubmitted: isLoading
-                              ? null
-                              : (_) async => await startSignIn(),
+                          onFieldSubmitted: isLoading ? null : (_) async => await startSignIn(),
                         ),
                         const SpaceBox.height(16),
                         TextButton(
@@ -126,8 +112,7 @@ class TopPage extends HookWidget {
                             children: [
                               if (isLoading)
                                 Expanded(
-                                  child:
-                                      CircularProgressIndicator(strokeWidth: 2),
+                                  child: CircularProgressIndicator(strokeWidth: 2),
                                 )
                             ],
                           ),

@@ -64,8 +64,7 @@ mixin _$Result<T> {
 
 /// @nodoc
 abstract class $ResultCopyWith<T, $Res> {
-  factory $ResultCopyWith(Result<T> value, $Res Function(Result<T>) then) =
-      _$ResultCopyWithImpl<T, $Res>;
+  factory $ResultCopyWith(Result<T> value, $Res Function(Result<T>) then) = _$ResultCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -79,14 +78,12 @@ class _$ResultCopyWithImpl<T, $Res> implements $ResultCopyWith<T, $Res> {
 
 /// @nodoc
 abstract class $SuccessCopyWith<T, $Res> {
-  factory $SuccessCopyWith(Success<T> value, $Res Function(Success<T>) then) =
-      _$SuccessCopyWithImpl<T, $Res>;
+  factory $SuccessCopyWith(Success<T> value, $Res Function(Success<T>) then) = _$SuccessCopyWithImpl<T, $Res>;
   $Res call({T data});
 }
 
 /// @nodoc
-class _$SuccessCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res>
-    implements $SuccessCopyWith<T, $Res> {
+class _$SuccessCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res> implements $SuccessCopyWith<T, $Res> {
   _$SuccessCopyWithImpl(Success<T> _value, $Res Function(Success<T>) _then)
       : super(_value, (v) => _then(v as Success<T>));
 
@@ -122,27 +119,22 @@ class _$Success<T> extends Success<T> with DiagnosticableTreeMixin {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Result<$T>.success'))
-      ..add(DiagnosticsProperty('data', data));
+    properties..add(DiagnosticsProperty('type', 'Result<$T>.success'))..add(DiagnosticsProperty('data', data));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Success<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  $SuccessCopyWith<T, Success<T>> get copyWith =>
-      _$SuccessCopyWithImpl<T, Success<T>>(this, _$identity);
+  $SuccessCopyWith<T, Success<T>> get copyWith => _$SuccessCopyWithImpl<T, Success<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -195,20 +187,17 @@ abstract class Success<T> extends Result<T> {
 
   T get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SuccessCopyWith<T, Success<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SuccessCopyWith<T, Success<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FailureCopyWith<T, $Res> {
-  factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) then) =
-      _$FailureCopyWithImpl<T, $Res>;
+  factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) then) = _$FailureCopyWithImpl<T, $Res>;
   $Res call({AppError error});
 }
 
 /// @nodoc
-class _$FailureCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res>
-    implements $FailureCopyWith<T, $Res> {
+class _$FailureCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
   _$FailureCopyWithImpl(Failure<T> _value, $Res Function(Failure<T>) _then)
       : super(_value, (v) => _then(v as Failure<T>));
 
@@ -244,27 +233,22 @@ class _$Failure<T> extends Failure<T> with DiagnosticableTreeMixin {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Result<$T>.failure'))
-      ..add(DiagnosticsProperty('error', error));
+    properties..add(DiagnosticsProperty('type', 'Result<$T>.failure'))..add(DiagnosticsProperty('error', error));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Failure<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
-  $FailureCopyWith<T, Failure<T>> get copyWith =>
-      _$FailureCopyWithImpl<T, Failure<T>>(this, _$identity);
+  $FailureCopyWith<T, Failure<T>> get copyWith => _$FailureCopyWithImpl<T, Failure<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -317,6 +301,5 @@ abstract class Failure<T> extends Result<T> {
 
   AppError get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FailureCopyWith<T, Failure<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FailureCopyWith<T, Failure<T>> get copyWith => throw _privateConstructorUsedError;
 }
