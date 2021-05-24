@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kotlin_flavor/scope_functions.dart';
 import 'package:shot_client/providers/pages/sign_in_page_provider.dart';
 import 'package:shot_client/widgets/shot_page_container_decoration.dart';
 import 'package:shot_client/widgets/space_box.dart';
@@ -20,17 +19,15 @@ class SignInPage extends HookWidget {
       final signInResult = await context.read(signInPageProvider.notifier).signIn();
       await signInResult.when(
         success: (authUid) async {
-          final userShotIdResult =
-              await context.read(signInPageProvider.notifier).fetchOnpPersonUserId(authUid: authUid);
-          userShotIdResult.when(success: (String? shotId) {
-            shotId?.let((it) {
-                  // TODO
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(it)));
-                }) ??
-                run(() {
-                  // TODO
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("not found")));
-                });
+          final userIdResult = await context.read(signInPageProvider.notifier).fetchOnpPersonUserId(authUid: authUid);
+          userIdResult.when(success: (String? shotId) {
+            if (shotId != null) {
+              // TODO
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(shotId)));
+            } else {
+              // TODO
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("not found")));
+            }
           }, failure: (e2) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e2.message}")));
           });
