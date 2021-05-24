@@ -18,16 +18,17 @@ class UserRepositoryImpl implements UserRepository {
   }) async {
     try {
       final usersRef = _store.collection('users');
-      final priorDocSnapshotBySameShotId = await usersRef.where(shotId).get();
-
-      if (priorDocSnapshotBySameShotId.docs.isNotEmpty) {
-        return Result.failure(error: AppError(type: AppErrorType.badRequest, message: "'$shotId' is already in use"));
-      }
-
       final usersDocRef = usersRef.doc(authUid);
+
       final priorDocSnapshotBySameAuthUId = await usersDocRef.get();
       if (priorDocSnapshotBySameAuthUId.exists) {
-        return Result.failure(error: AppError(type: AppErrorType.badRequest, message: "User already exist."));
+        return Result.failure(error: AppError(type: AppErrorType.badRequest, message: "You are already registered... Why are you here!?"));
+      }
+
+      final priorDocSnapshotBySameShotId = await usersRef.where("id", isEqualTo: shotId).get();
+      if (priorDocSnapshotBySameShotId.docs.isNotEmpty) {
+        return Result.failure(
+            error: AppError(type: AppErrorType.badRequest, message: "Oops! Shot-ID '$shotId' is already in use."));
       }
 
       usersDocRef.set({
