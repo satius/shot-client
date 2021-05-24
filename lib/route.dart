@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shot_client/pages/redirect/redirect_page.dart';
 import 'package:shot_client/pages/setup/set_up_page.dart';
 import 'package:shot_client/pages/signIn/sign_in_page.dart';
 import 'package:shot_client/pages/signUp/sign_up_page.dart';
@@ -13,73 +14,37 @@ class RouteGenerator {
   RouteGenerator._();
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    final isVerified = (settings.arguments as RouteArguments?)?.isVerified ?? false;
+    if (!isVerified) {
+      return createPageRoute(settingsName: settings.name, page: RedirectPage(settings.name));
+    }
+
     switch (settings.name) {
       case homePage:
       case signInPage:
-        final onePersonUserPageRoute = createOnePersonUserPageRoute();
-        if (onePersonUserPageRoute != null) {
-          return onePersonUserPageRoute;
+        if (!isVerified) {
+          return createPageRoute(settingsName: settings.name, page: RedirectPage(settings.name));
         } else {
           return createPageRoute(settingsName: settings.name, page: SignInPage());
         }
 
       case signUpPage:
-        final onePersonUserPageRoute = createOnePersonUserPageRoute();
-        if (onePersonUserPageRoute != null) {
-          return onePersonUserPageRoute;
+        if (!isVerified) {
+          return createPageRoute(settingsName: settings.name, page: RedirectPage(settings.name));
         } else {
           return createPageRoute(settingsName: settings.name, page: SignUpPage());
         }
 
       case setUpPage:
-        if (isSetUpPageAvailable()) {
-          return createPageRoute(settingsName: settings.name, page: SetUpPage());
+        if (!isVerified) {
+          return createPageRoute(settingsName: settings.name, page: RedirectPage(settings.name));
         } else {
-          final onePersonUserPageRoute = createOnePersonUserPageRoute();
-          if (onePersonUserPageRoute != null) {
-            return onePersonUserPageRoute;
-          } else {
-            return createPageRoute(settingsName: homePage, page: SignInPage());
-          }
+          return createPageRoute(settingsName: settings.name, page: SetUpPage());
         }
 
       default:
-        final defaultPageRoute = createDefaultPageRoute();
-        if (defaultPageRoute != null) {
-          return defaultPageRoute;
-        } else {
-          final onePersonUserPageRoute = createOnePersonUserPageRoute();
-          if (onePersonUserPageRoute != null) {
-            return onePersonUserPageRoute;
-          } else {
-            return createPageRoute(settingsName: settings.name, page: SignInPage());
-          }
-        }
+        return createPageRoute(settingsName: settings.name, page: RedirectPage(settings.name));
     }
-  }
-
-  static bool isSetUpPageAvailable() {
-    // TODO: FIrebase認証状態(currentUserがいる)、かつShotIdが未登録ならtrue
-    return true;
-  }
-
-  static bool isAuthorized() {
-    // TODO: FIrebase認証状態(currentUserがいる)ならtrue
-    return false;
-  }
-
-  static Route<dynamic>? createOnePersonUserPageRoute() {
-    // TODO: CurrentUserのauthUidでuserRepositoryからshotIdを取得
-    final shotId = "";
-    // return createUserPageRoute(settingsName: "/$shotId");
-    return null;
-  }
-
-  static Route<dynamic>? createDefaultPageRoute() {
-    // TODO: CurrentUserのauthUidでuserRepositoryからshotIdを取得
-    final shotId = "";
-    // return createUserPageRoute(settingsName: "/$shotId");
-    return null;
   }
 
   static Route<dynamic> createPageRoute({String? settingsName, required Widget page}) {
@@ -90,8 +55,8 @@ class RouteGenerator {
   }
 }
 
-class RouteException implements Exception {
-  final String message;
+class RouteArguments {
+  final bool isVerified;
 
-  const RouteException(this.message);
+  RouteArguments(this.isVerified);
 }
