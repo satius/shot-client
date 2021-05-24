@@ -18,6 +18,7 @@ enum AppErrorType {
   timeout,
   server,
   notFound,
+  front,
   unknown,F
 }
 
