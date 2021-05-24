@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kotlin_flavor/scope_functions.dart';
 import 'package:shot_client/providers/pages/sign_up_page_provider.dart';
 import 'package:shot_client/widgets/shot_page_container_decoration.dart';
 import 'package:shot_client/widgets/space_box.dart';
@@ -14,26 +13,15 @@ class SignUpPage extends HookWidget {
     final emailFocusNode = useProvider(signUpPageProvider).emailFocusNode;
     final passwordFocusNode = useProvider(signUpPageProvider).passwordFocusNode;
 
-    final startSignIn = () async {
+    final startSignUp = () async {
       form.currentState!.save();
       context.read(signUpPageProvider.notifier).loadingStart();
-      final signInResult = await context.read(signUpPageProvider.notifier).signIn();
-      await signInResult.when(
+
+      final signUpResult = await context.read(signUpPageProvider.notifier).signUp();
+      await signUpResult.when(
         success: (authUid) async {
-          final userShotIdResult =
-              await context.read(signUpPageProvider.notifier).fetchOnpPersonUserId(authUid: authUid);
-          userShotIdResult.when(success: (String? shotId) {
-            shotId?.let((it) {
-                  // TODO
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(it)));
-                }) ??
-                run(() {
-                  // TODO
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("not found")));
-                });
-          }, failure: (e2) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e2.message}")));
-          });
+          // TODO: Navigate to setup page
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("$authUid TODO: Navigate to setup page")));
         },
         failure: (e) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e.message}")));
@@ -59,12 +47,12 @@ class SignUpPage extends HookWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Sign in",
+                "Sign up",
                 style: TextStyle(fontSize: 32),
               ),
               const SpaceBox.height(8),
               Text(
-                "Welcome back!",
+                "Welcome!",
                 style: TextStyle(fontSize: 12),
               ),
               Container(
@@ -99,11 +87,11 @@ class SignUpPage extends HookWidget {
                           onSaved: (passwordValue) {
                             context.read(signUpPageProvider.notifier).savePassword(passwordValue);
                           },
-                          onFieldSubmitted: isLoading ? null : (_) async => await startSignIn(),
+                          onFieldSubmitted: isLoading ? null : (_) async => await startSignUp(),
                         ),
                         const SpaceBox.height(16),
                         TextButton(
-                          onPressed: isLoading ? null : startSignIn,
+                          onPressed: isLoading ? null : startSignUp,
                           child: Text("Submit"),
                         ),
                         SizedBox(
@@ -120,16 +108,16 @@ class SignUpPage extends HookWidget {
                         ),
                         const SpaceBox.height(32),
                         Text(
-                          "Or are you new?",
+                          "Do we know each other, sir?",
                           style: TextStyle(fontSize: 12),
                         ),
                         TextButton(
                           onPressed: isLoading
                               ? null
-                              : () async {
-                                  // TODO: to sign up page
+                              : () {
+                                  Navigator.restorablePopAndPushNamed(context, "/signin");
                                 },
-                          child: Text("Create an account"),
+                          child: Text("Use existing account"),
                         ),
                       ],
                     ),

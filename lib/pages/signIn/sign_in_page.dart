@@ -126,8 +126,8 @@ class SignInPage extends HookWidget {
                         TextButton(
                           onPressed: isLoading
                               ? null
-                              : () async {
-                                  // TODO: to sign up page
+                              : () {
+                                  Navigator.restorablePopAndPushNamed(context, "/signup");
                                 },
                           child: Text("Create an account"),
                         ),
