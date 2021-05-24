@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shot_client/pages/top/top_page.dart';
+import 'package:shot_client/pages/signIn/sign_in_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: TopPage(),
+      home: SignInPage(),
     );
   }
 }

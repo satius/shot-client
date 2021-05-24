@@ -2,14 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shot_client/models/common/app_error.dart';
 import 'package:shot_client/models/common/result.dart';
+import 'package:shot_client/models/controllers/signIn/sign_in_page_state.dart';
 import 'package:shot_client/models/repositories/auth_repository.dart';
 import 'package:shot_client/models/repositories/user_repository.dart';
 
-import 'top_page_state.dart';
-
-class TopPageController extends StateNotifier<TopPageState> {
-  TopPageController(this._authRepository, this._userRepository)
-      : super(TopPageState(
+class SignInPageController extends StateNotifier<SignInPageState> {
+  SignInPageController(this._authRepository, this._userRepository)
+      : super(SignInPageState(
           isLoading: false,
           formState: GlobalKey<FormState>(),
         ));

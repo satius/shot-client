@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'top_page_state.dart';
+part of 'sign_in_page_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,15 +13,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TopPageStateTearOff {
-  const _$TopPageStateTearOff();
+class _$SignInPageStateTearOff {
+  const _$SignInPageStateTearOff();
 
-  _TopPageState call(
+  _SignInPageState call(
       {required bool isLoading,
       String? email,
       String? password,
       required GlobalKey<FormState> formState}) {
-    return _TopPageState(
+    return _SignInPageState(
       isLoading: isLoading,
       email: email,
       password: password,
@@ -31,25 +31,25 @@ class _$TopPageStateTearOff {
 }
 
 /// @nodoc
-const $TopPageState = _$TopPageStateTearOff();
+const $SignInPageState = _$SignInPageStateTearOff();
 
 /// @nodoc
-mixin _$TopPageState {
+mixin _$SignInPageState {
   bool get isLoading => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
   GlobalKey<FormState> get formState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TopPageStateCopyWith<TopPageState> get copyWith =>
+  $SignInPageStateCopyWith<SignInPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TopPageStateCopyWith<$Res> {
-  factory $TopPageStateCopyWith(
-          TopPageState value, $Res Function(TopPageState) then) =
-      _$TopPageStateCopyWithImpl<$Res>;
+abstract class $SignInPageStateCopyWith<$Res> {
+  factory $SignInPageStateCopyWith(
+          SignInPageState value, $Res Function(SignInPageState) then) =
+      _$SignInPageStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
       String? email,
@@ -58,12 +58,13 @@ abstract class $TopPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TopPageStateCopyWithImpl<$Res> implements $TopPageStateCopyWith<$Res> {
-  _$TopPageStateCopyWithImpl(this._value, this._then);
+class _$SignInPageStateCopyWithImpl<$Res>
+    implements $SignInPageStateCopyWith<$Res> {
+  _$SignInPageStateCopyWithImpl(this._value, this._then);
 
-  final TopPageState _value;
+  final SignInPageState _value;
   // ignore: unused_field
-  final $Res Function(TopPageState) _then;
+  final $Res Function(SignInPageState) _then;
 
   @override
   $Res call({
@@ -94,11 +95,11 @@ class _$TopPageStateCopyWithImpl<$Res> implements $TopPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TopPageStateCopyWith<$Res>
-    implements $TopPageStateCopyWith<$Res> {
-  factory _$TopPageStateCopyWith(
-          _TopPageState value, $Res Function(_TopPageState) then) =
-      __$TopPageStateCopyWithImpl<$Res>;
+abstract class _$SignInPageStateCopyWith<$Res>
+    implements $SignInPageStateCopyWith<$Res> {
+  factory _$SignInPageStateCopyWith(
+          _SignInPageState value, $Res Function(_SignInPageState) then) =
+      __$SignInPageStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isLoading,
@@ -108,14 +109,15 @@ abstract class _$TopPageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TopPageStateCopyWithImpl<$Res> extends _$TopPageStateCopyWithImpl<$Res>
-    implements _$TopPageStateCopyWith<$Res> {
-  __$TopPageStateCopyWithImpl(
-      _TopPageState _value, $Res Function(_TopPageState) _then)
-      : super(_value, (v) => _then(v as _TopPageState));
+class __$SignInPageStateCopyWithImpl<$Res>
+    extends _$SignInPageStateCopyWithImpl<$Res>
+    implements _$SignInPageStateCopyWith<$Res> {
+  __$SignInPageStateCopyWithImpl(
+      _SignInPageState _value, $Res Function(_SignInPageState) _then)
+      : super(_value, (v) => _then(v as _SignInPageState));
 
   @override
-  _TopPageState get _value => super._value as _TopPageState;
+  _SignInPageState get _value => super._value as _SignInPageState;
 
   @override
   $Res call({
@@ -124,7 +126,7 @@ class __$TopPageStateCopyWithImpl<$Res> extends _$TopPageStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? formState = freezed,
   }) {
-    return _then(_TopPageState(
+    return _then(_SignInPageState(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -147,8 +149,8 @@ class __$TopPageStateCopyWithImpl<$Res> extends _$TopPageStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TopPageState extends _TopPageState {
-  _$_TopPageState(
+class _$_SignInPageState extends _SignInPageState {
+  _$_SignInPageState(
       {required this.isLoading,
       this.email,
       this.password,
@@ -166,13 +168,13 @@ class _$_TopPageState extends _TopPageState {
 
   @override
   String toString() {
-    return 'TopPageState(isLoading: $isLoading, email: $email, password: $password, formState: $formState)';
+    return 'SignInPageState(isLoading: $isLoading, email: $email, password: $password, formState: $formState)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TopPageState &&
+        (other is _SignInPageState &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
@@ -196,17 +198,17 @@ class _$_TopPageState extends _TopPageState {
 
   @JsonKey(ignore: true)
   @override
-  _$TopPageStateCopyWith<_TopPageState> get copyWith =>
-      __$TopPageStateCopyWithImpl<_TopPageState>(this, _$identity);
+  _$SignInPageStateCopyWith<_SignInPageState> get copyWith =>
+      __$SignInPageStateCopyWithImpl<_SignInPageState>(this, _$identity);
 }
 
-abstract class _TopPageState extends TopPageState {
-  factory _TopPageState(
+abstract class _SignInPageState extends SignInPageState {
+  factory _SignInPageState(
       {required bool isLoading,
       String? email,
       String? password,
-      required GlobalKey<FormState> formState}) = _$_TopPageState;
-  _TopPageState._() : super._();
+      required GlobalKey<FormState> formState}) = _$_SignInPageState;
+  _SignInPageState._() : super._();
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -218,6 +220,6 @@ abstract class _TopPageState extends TopPageState {
   GlobalKey<FormState> get formState => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TopPageStateCopyWith<_TopPageState> get copyWith =>
+  _$SignInPageStateCopyWith<_SignInPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
