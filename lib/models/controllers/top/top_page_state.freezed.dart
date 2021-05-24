@@ -17,7 +17,10 @@ class _$TopPageStateTearOff {
   const _$TopPageStateTearOff();
 
   _TopPageState call(
-      {required bool isLoading, String? email, String? password, required GlobalKey<FormState> formState}) {
+      {required bool isLoading,
+      String? email,
+      String? password,
+      required GlobalKey<FormState> formState}) {
     return _TopPageState(
       isLoading: isLoading,
       email: email,
@@ -38,14 +41,20 @@ mixin _$TopPageState {
   GlobalKey<FormState> get formState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TopPageStateCopyWith<TopPageState> get copyWith => throw _privateConstructorUsedError;
+  $TopPageStateCopyWith<TopPageState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TopPageStateCopyWith<$Res> {
-  factory $TopPageStateCopyWith(TopPageState value, $Res Function(TopPageState) then) =
+  factory $TopPageStateCopyWith(
+          TopPageState value, $Res Function(TopPageState) then) =
       _$TopPageStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, String? email, String? password, GlobalKey<FormState> formState});
+  $Res call(
+      {bool isLoading,
+      String? email,
+      String? password,
+      GlobalKey<FormState> formState});
 }
 
 /// @nodoc
@@ -85,17 +94,24 @@ class _$TopPageStateCopyWithImpl<$Res> implements $TopPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TopPageStateCopyWith<$Res> implements $TopPageStateCopyWith<$Res> {
-  factory _$TopPageStateCopyWith(_TopPageState value, $Res Function(_TopPageState) then) =
+abstract class _$TopPageStateCopyWith<$Res>
+    implements $TopPageStateCopyWith<$Res> {
+  factory _$TopPageStateCopyWith(
+          _TopPageState value, $Res Function(_TopPageState) then) =
       __$TopPageStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, String? email, String? password, GlobalKey<FormState> formState});
+  $Res call(
+      {bool isLoading,
+      String? email,
+      String? password,
+      GlobalKey<FormState> formState});
 }
 
 /// @nodoc
 class __$TopPageStateCopyWithImpl<$Res> extends _$TopPageStateCopyWithImpl<$Res>
     implements _$TopPageStateCopyWith<$Res> {
-  __$TopPageStateCopyWithImpl(_TopPageState _value, $Res Function(_TopPageState) _then)
+  __$TopPageStateCopyWithImpl(
+      _TopPageState _value, $Res Function(_TopPageState) _then)
       : super(_value, (v) => _then(v as _TopPageState));
 
   @override
@@ -132,7 +148,12 @@ class __$TopPageStateCopyWithImpl<$Res> extends _$TopPageStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TopPageState extends _TopPageState {
-  _$_TopPageState({required this.isLoading, this.email, this.password, required this.formState}) : super._();
+  _$_TopPageState(
+      {required this.isLoading,
+      this.email,
+      this.password,
+      required this.formState})
+      : super._();
 
   @override
   final bool isLoading;
@@ -153,11 +174,16 @@ class _$_TopPageState extends _TopPageState {
     return identical(this, other) ||
         (other is _TopPageState &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality().equals(other.isLoading, isLoading)) &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+                const DeepCollectionEquality()
+                    .equals(other.isLoading, isLoading)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
             (identical(other.formState, formState) ||
-                const DeepCollectionEquality().equals(other.formState, formState)));
+                const DeepCollectionEquality()
+                    .equals(other.formState, formState)));
   }
 
   @override
@@ -170,7 +196,8 @@ class _$_TopPageState extends _TopPageState {
 
   @JsonKey(ignore: true)
   @override
-  _$TopPageStateCopyWith<_TopPageState> get copyWith => __$TopPageStateCopyWithImpl<_TopPageState>(this, _$identity);
+  _$TopPageStateCopyWith<_TopPageState> get copyWith =>
+      __$TopPageStateCopyWithImpl<_TopPageState>(this, _$identity);
 }
 
 abstract class _TopPageState extends TopPageState {
@@ -191,5 +218,6 @@ abstract class _TopPageState extends TopPageState {
   GlobalKey<FormState> get formState => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TopPageStateCopyWith<_TopPageState> get copyWith => throw _privateConstructorUsedError;
+  _$TopPageStateCopyWith<_TopPageState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
