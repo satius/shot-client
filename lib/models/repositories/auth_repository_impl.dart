@@ -72,4 +72,9 @@ class AuthRepositoryImpl implements AuthRepository {
       return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
+
+  @override
+  String? getCurrentUserAuthUid() {
+    return _auth.currentUser?.uid;
+  }
 }

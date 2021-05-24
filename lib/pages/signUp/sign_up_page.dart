@@ -21,8 +21,7 @@ class SignUpPage extends HookWidget {
       final signUpResult = await context.read(signUpPageProvider.notifier).signUp();
       await signUpResult.when(
         success: (authUid) async {
-          // TODO: Navigate to setup page
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("$authUid TODO: Navigate to setup page")));
+          Navigator.restorablePopAndPushNamed(context, RouteGenerator.setUpPage);
         },
         failure: (e) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e.message}")));

@@ -23,11 +23,10 @@ class SignInPage extends HookWidget {
           final userIdResult = await context.read(signInPageProvider.notifier).fetchOnpPersonUserId(authUid: authUid);
           userIdResult.when(success: (String? shotId) {
             if (shotId != null) {
-              // TODO
+              // TODO: navigate to user(one-person) page
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(shotId)));
             } else {
-              // TODO
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("not found")));
+              Navigator.restorablePopAndPushNamed(context, RouteGenerator.setUpPage);
             }
           }, failure: (e2) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("${e2.message}")));
