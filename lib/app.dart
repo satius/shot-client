@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/home/home_page.dart';
+import 'package:shot_client/pages/top/top_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,7 +9,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Shot'),
+      home: TopPage(),
     );
   }
 }
