@@ -21,15 +21,13 @@ class UserRepositoryImpl implements UserRepository {
       final priorDocSnapshotBySameShotId = await usersRef.where(shotId).get();
 
       if (priorDocSnapshotBySameShotId.docs.isNotEmpty) {
-        return Result.failure(
-            error: AppError(type: AppErrorType.badRequest, message: "'$shotId' is already in use"));
+        return Result.failure(error: AppError(type: AppErrorType.badRequest, message: "'$shotId' is already in use"));
       }
 
       final usersDocRef = usersRef.doc(authUid);
       final priorDocSnapshotBySameAuthUId = await usersDocRef.get();
       if (priorDocSnapshotBySameAuthUId.exists) {
-        return Result.failure(
-            error: AppError(type: AppErrorType.badRequest, message: "User already exist."));
+        return Result.failure(error: AppError(type: AppErrorType.badRequest, message: "User already exist."));
       }
 
       usersDocRef.set({
@@ -39,11 +37,9 @@ class UserRepositoryImpl implements UserRepository {
       });
       return Result.success(data: null);
     } on FirebaseException catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: e.message));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: e.message));
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 
@@ -71,11 +67,9 @@ class UserRepositoryImpl implements UserRepository {
         createdAt: data["created_at"],
       ));
     } on FirebaseException catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: e.message));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: e.message));
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 
@@ -85,11 +79,7 @@ class UserRepositoryImpl implements UserRepository {
   }) async {
     try {
       final usersRef = _store.collection('users');
-      final snapshot = await usersRef
-          .where("id", isEqualTo: shotId)
-          .orderBy("created_at")
-          .limit(1)
-          .get();
+      final snapshot = await usersRef.where("id", isEqualTo: shotId).orderBy("created_at").limit(1).get();
 
       if (snapshot.docs.isEmpty) {
         return Result.failure(error: AppError(type: AppErrorType.notFound));
@@ -105,11 +95,9 @@ class UserRepositoryImpl implements UserRepository {
         createdAt: userData["created_at"],
       ));
     } on FirebaseException catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: e.message));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: e.message));
     } catch (e) {
-      return Result.failure(
-          error: AppError(type: AppErrorType.unknown, message: "$e"));
+      return Result.failure(error: AppError(type: AppErrorType.unknown, message: "$e"));
     }
   }
 }

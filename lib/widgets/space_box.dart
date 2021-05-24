@@ -1,8 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class SpaceBox extends SizedBox {
-  SpaceBox({double width = 8, double height = 8})
-      : super(width: width, height: height);
+  SpaceBox({double width = 8, double height = 8}) : super(width: width, height: height);
 
   const SpaceBox.zero() : super(width: 0, height: 0);
 

@@ -62,8 +62,7 @@ mixin _$ShotUserType {
 
 /// @nodoc
 abstract class $ShotUserTypeCopyWith<$Res> {
-  factory $ShotUserTypeCopyWith(
-          ShotUserType value, $Res Function(ShotUserType) then) =
+  factory $ShotUserTypeCopyWith(ShotUserType value, $Res Function(ShotUserType) then) =
       _$ShotUserTypeCopyWithImpl<$Res>;
 }
 
@@ -78,15 +77,12 @@ class _$ShotUserTypeCopyWithImpl<$Res> implements $ShotUserTypeCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$OnePersonCopyWith<$Res> {
-  factory _$OnePersonCopyWith(
-          _OnePerson value, $Res Function(_OnePerson) then) =
-      __$OnePersonCopyWithImpl<$Res>;
+  factory _$OnePersonCopyWith(_OnePerson value, $Res Function(_OnePerson) then) = __$OnePersonCopyWithImpl<$Res>;
   $Res call({String authUid});
 }
 
 /// @nodoc
-class __$OnePersonCopyWithImpl<$Res> extends _$ShotUserTypeCopyWithImpl<$Res>
-    implements _$OnePersonCopyWith<$Res> {
+class __$OnePersonCopyWithImpl<$Res> extends _$ShotUserTypeCopyWithImpl<$Res> implements _$OnePersonCopyWith<$Res> {
   __$OnePersonCopyWithImpl(_OnePerson _value, $Res Function(_OnePerson) _then)
       : super(_value, (v) => _then(v as _OnePerson));
 
@@ -123,18 +119,15 @@ class _$_OnePerson extends _OnePerson {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OnePerson &&
-            (identical(other.authUid, authUid) ||
-                const DeepCollectionEquality().equals(other.authUid, authUid)));
+            (identical(other.authUid, authUid) || const DeepCollectionEquality().equals(other.authUid, authUid)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(authUid);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authUid);
 
   @JsonKey(ignore: true)
   @override
-  _$OnePersonCopyWith<_OnePerson> get copyWith =>
-      __$OnePersonCopyWithImpl<_OnePerson>(this, _$identity);
+  _$OnePersonCopyWith<_OnePerson> get copyWith => __$OnePersonCopyWithImpl<_OnePerson>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -187,22 +180,18 @@ abstract class _OnePerson extends ShotUserType {
 
   String get authUid => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$OnePersonCopyWith<_OnePerson> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$OnePersonCopyWith<_OnePerson> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$ThreePersonCopyWith<$Res> {
-  factory _$ThreePersonCopyWith(
-          _ThreePerson value, $Res Function(_ThreePerson) then) =
+  factory _$ThreePersonCopyWith(_ThreePerson value, $Res Function(_ThreePerson) then) =
       __$ThreePersonCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ThreePersonCopyWithImpl<$Res> extends _$ShotUserTypeCopyWithImpl<$Res>
-    implements _$ThreePersonCopyWith<$Res> {
-  __$ThreePersonCopyWithImpl(
-      _ThreePerson _value, $Res Function(_ThreePerson) _then)
+class __$ThreePersonCopyWithImpl<$Res> extends _$ShotUserTypeCopyWithImpl<$Res> implements _$ThreePersonCopyWith<$Res> {
+  __$ThreePersonCopyWithImpl(_ThreePerson _value, $Res Function(_ThreePerson) _then)
       : super(_value, (v) => _then(v as _ThreePerson));
 
   @override
